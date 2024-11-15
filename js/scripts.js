@@ -107,6 +107,6 @@ searchInput.addEventListener('input', (e) => {
     if (query) {
         searchRecipes(query);
     } else {
-        recipeList.innerHTML = ''; // Limpiar resultados si no hay texto en el campo de búsqueda
+        recipeList.innerHTML = ''; 
     }
 });
