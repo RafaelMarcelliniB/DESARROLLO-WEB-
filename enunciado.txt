@@ -1,0 +1,8 @@
+Diseña un sitio web de recetas donde los usuarios puedan buscar platos específicos o
+ingredientes y recibir una lista de recetas relevantes. La página debería tener un campo de
+búsqueda donde, al ingresar una palabra clave, se realice una solicitud AJAX a una API de
+recetas (como Spoonacular o Edamam) para obtener resultados en tiempo real. Cada receta
+mostrará una imagen, una lista de ingredientes, pasos de preparación y, opcionalmente, la
+información nutricional. Los usuarios pueden hacer clic en cada receta para ver más detalles
+o guardarla en una lista de favoritos local. Usa HTML y CSS para una interfaz atractiva y clara,
+y JavaScript para manejar las solicitudes y mostrar los datos dinámicos.

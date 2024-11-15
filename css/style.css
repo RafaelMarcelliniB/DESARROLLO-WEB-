@@ -1,0 +1,103 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(161, 149, 131);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+header img {
+    width: 200px;
+    height: auto;
+}
+
+
+.container {
+    position: absolute;
+    right: 1%; 
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+}
+
+
+input {
+    outline: none;
+    box-sizing: border-box;
+    height: 60px;
+    width: 0px;
+    padding: 0 20px;
+    color: #000;
+    border-radius: 50px;
+    font-size: 20px;
+    border: 1px solid #000000;
+    transition: all .7s ease;
+}
+
+
+::placeholder {
+    color: grey;
+}
+
+
+.btn {
+    position: absolute;
+    right: 0px; 
+    top: 0px;
+    width: 70px;
+    height: 70px;
+    background: #184208;
+    line-height: 80px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.btn i {
+    font-size: 25px;
+    color: white;
+    line-height: 70px;
+    transition: all .7s ease;
+}
+
+
+.container:hover input {
+    width: 500px; 
+}
+
+.container:hover i {
+    transform: rotate(-360deg); 
+}
+
+
+.btn:hover {
+    background: #c5ba20; 
+}
