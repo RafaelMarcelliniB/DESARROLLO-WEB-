@@ -10,6 +10,7 @@ body {
     background-color: rgb(161, 149, 131);
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;  /* Fondo fijo */
     color: #fff;
     display: flex;
     flex-direction: column;
