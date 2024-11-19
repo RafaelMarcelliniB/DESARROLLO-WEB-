@@ -48,24 +48,44 @@ function viewRecipeDetails(id) {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            alert(`Receta: ${data.title}\nIngredientes: ${data.extendedIngredients.map(ingredient => ingredient.name).join(', ')}\nPasos: ${data.analyzedInstructions[0]?.steps.map(step => step.step).join('\n')}`);
+            document.getElementById('modalTitle').textContent = data.title;
+            document.getElementById('modalIngredients').textContent = data.extendedIngredients.map(ingredient => ingredient.name).join(', ');
+            document.getElementById('modalSteps').textContent = data.analyzedInstructions[0]?.steps.map(step => step.step).join('\n');
+            document.getElementById('recipeModal').style.display = 'flex';
         })
         .catch(error => console.error('Error fetching recipe details:', error));
 }
 
+function closeModal() {
+    document.getElementById('recipeModal').style.display = 'none';
+}
 
 function addToFavorites(id, title, image) {
+   
+    const existingFavorites = Array.from(favoritoList.querySelectorAll('li'));
+    const alreadyFavorited = existingFavorites.some(item => {
+        const itemTitle = item.querySelector('span').textContent;
+        return itemTitle === title;
+    });
+
+    if (alreadyFavorited) {
+       
+        alert('Esta receta ya está en la lista de favoritos.');
+        return; 
+    }
+
+    
     const favoriteItem = document.createElement('li');
     favoriteItem.innerHTML = `
         <img src="${image}" alt="${title}" width="50">
         <span>${title}</span>
+        <button onclick="viewRecipeDetails(${id})">Ver Detalles</button>
         <button onclick="removeFromFavorites(this)">Eliminar</button>
     `;
 
     favoritoList.appendChild(favoriteItem);
-    saveFavorites(); 
+    saveFavorites();
 }
-
 
 function removeFromFavorites(button) {
     button.parentElement.remove();
